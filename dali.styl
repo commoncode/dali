@@ -1,0 +1,134 @@
+@import 'nib'
+
+//
+// DALI
+//
+// A Style framework in Stylus by Daryl Antony
+//
+// Based on the picks of Zurb, Bootstrap and others with my own Grid flavour.
+//
+
+//
+// Resets
+//
+
+global-reset()
+reset-html5()
+
+//
+// Grid
+//
+
+grid_columns = 24
+grid_gutter = 1em
+grid_column_width = 3em
+grid_row_height = grid_column_width
+grid_width = grid_columns * grid_column_width
+
+columns(n)
+  width n * (grid_width / grid_columns)
+
+grid()
+  margin grid_gutter auto
+  width grid_width
+
+grid_element()
+  display inline-block
+  float left
+  margin (grid_gutter/2)
+
+grid_column(c)
+  grid_element()
+  width (c - 1) * grid_column_width + (grid_column_width - grid_gutter)
+
+grid_row(r)
+  grid_element()
+  height (r - 1) * grid_row_height - (grid_row_height - grid_gutter)
+
+grid_cell(r, c)
+  grid_row(r)
+  grid_column(c)
+
+
+//
+// Panels
+//
+
+panel()
+  background-color #f2f2f2
+  border solid 1px #e6e6e6
+  box-sizing border-box
+  padding grid_gutter
+
+//
+// Settings
+//
+
+header_color = #444
+
+//
+// Typography
+//
+// referencing https://github.com/zurb/foundation/blob/master/scss/foundation/common/_typography.scss
+//
+
+html
+  font-family "Helvetica Neue" Helvetica Arial sans-serif
+
+h1, h2, h3, h4, h5, h6
+  color header_color
+  font-weight 900
+  margin-bottom 1em
+  margin-top 1em
+  text-rendering optimizeLegibility
+  a
+    color header_color
+    text-decoration none
+  small
+    font-size: 75%
+
+h1
+  font-size 4em
+
+h2
+  font-size 3em
+
+h3
+  font-size 2em
+
+h4, h5, h6
+  font-size 1em
+
+ul
+  margin-left 1em
+
+
+//
+// Forms
+//
+
+
+//
+// Buttons
+//
+
+
+button
+  border-radius 1em
+
+//
+// Navigation
+//
+
+nav
+  font-weight bold
+  ul
+    margin-left none
+    li
+      display inline-block
+      &:after
+        content '|'
+        margin 0 .75em 0 1em
+    li:last-child
+      &:after
+        content none

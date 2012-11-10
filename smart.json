@@ -1,0 +1,8 @@
+{
+  "name": "dali",
+  "description": "A Stylus framework for Meteor",
+  "homepage": "https://github.com/commoncode/dali",
+  "author": "Daryl Antony",
+  "version": "0.0.1",
+  "git": "https://github.com/commoncode/dali"
+}
