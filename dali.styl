@@ -37,15 +37,21 @@ grid_element()
   float left
   margin (grid_gutter/2)
 
+grid_container()
+  // Define a container that contains
+  // grid elements, aligned in a neat grid
+  // Note, the negative margins for 'pulling'
+  // grid elements outwards
+  margin-left -(grid_gutter/2)
+  margin-right -(grid_gutter/2)
+
 grid_column(c)
   grid_element()
   width (c - 1) * grid_column_width + (grid_column_width - grid_gutter)
 
 grid_column_container(c)
   width c*grid_column_width
-  margin-left -(grid_gutter/2)
-  margin-right -(grid_gutter/2)
-
+  grid_container()
 
 grid_row(r)
   grid_element()
@@ -113,14 +119,23 @@ ul
 // Forms
 //
 
+form_input()
+  background-color #fff
+  border solid 1px #ccc
+  box-sizing border-box
+  padding grid_gutter
+  border-radius 4px
 
 //
 // Buttons
 //
 
-
 button
-  border-radius 1em
+  background-color #e5e5e5
+  border-radius 4px
+  border solid 1px #ccc
+  &:hover
+    background-color #e5e5e5 * 50%
 
 //
 // Navigation
