@@ -57,6 +57,10 @@ grid_row(r)
   grid_element()
   height (r - 1) * grid_row_height - (grid_row_height - grid_gutter)
 
+grid_row_container()
+  margin-top -(grid_gutter/2)
+  margin-bottom -(grid_gutter/2)
+
 grid_cell(r, c)
   grid_row(r)
   grid_column(c)
@@ -114,6 +118,22 @@ h4, h5, h6
 ul
   margin-left 1em
 
+dt
+  font-weight bold
+  &:after
+    content ':'
+    margin-right 1em
+dd
+  float left
+
+//
+// Aside
+//
+
+aside
+
+  // font-size .75em
+
 
 //
 // Forms
@@ -147,9 +167,16 @@ nav
     margin-left none
     li
       display inline-block
+      a
+        text-decoration none
+        &:hover
+          text-decoration underline
       &:after
         content '|'
         margin 0 .75em 0 1em
+    li:first-child
+      margin-left none
     li:last-child
       &:after
         content none
+        margin-right none
