@@ -19,9 +19,24 @@ reset-html5()
 // Grid
 //
 
-grid_columns = 24
-grid_gutter = 1em
-grid_column_width = 3em
+// These settings should be overridden by the file
+// importing 'dali', like so:
+//
+// grid_columns = 18
+// grid_gutter = 1em
+// grid_column_width = 3em
+
+// @import '.meteor/meteorite/packages/dali/dali'
+
+unless grid_columns is defined
+  grid_columns = 24
+
+unless grid_gutter is defined
+  grid_gutter = 1em
+
+unless grid_column_width is defined
+  grid_column_width = 3em
+
 grid_row_height = grid_column_width
 grid_width = grid_columns * grid_column_width
 
