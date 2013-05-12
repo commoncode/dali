@@ -93,6 +93,15 @@ panel()
   border-radius 3px
   opacity .9
 
+sup_panel()
+  // Panel that appears super set inside a panel
+  background-color #fefefe
+
+sub_panel()
+  // Sunken panel that appears to be below the page
+  background-color #333
+
+
 //
 // Settings
 //
@@ -182,18 +191,23 @@ form_input()
 // Buttons
 //
 
-button
+.button
+  display inline-block
+  padding (grid_gutter/2)
+  text-decoration none
+
+button, .button
   background-color #e5e5e5
   border-radius 4px
   border solid 1px #ccc
   &:hover
     background-color #e5e5e5 * 50%
 
-button.active
+button.active, .button.active
   background-color #e5e5e5 * 50%
   border solid 1px #666
 
-button.delete
+button.delete, .button.delete
   background-color rgb(238, 190, 190)
   border solid 1px rgb(231, 110, 110)
   color rgb(163, 37, 37)
